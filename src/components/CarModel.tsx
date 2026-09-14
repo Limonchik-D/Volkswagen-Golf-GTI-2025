@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useEffect } from 'react';
+import { useRef, useLayoutEffect, useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
@@ -13,7 +13,7 @@ interface CarModelProps {
 
 export default function CarModel({ carColor = '#E31B23' }: CarModelProps) {
   const group = useRef<THREE.Group>(null);
-  const { scene, materials } = useGLTF('/assets/volkswagen_golf_gti_2025.glb');
+  const { scene } = useGLTF('/assets/volkswagen_golf_gti_2025.glb');
 
   // Enable shadows
   useLayoutEffect(() => {
