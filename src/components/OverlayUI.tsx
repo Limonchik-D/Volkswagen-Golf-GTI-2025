@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { ChevronDown, ArrowRight, Zap, Shield, Maximize } from 'lucide-react';
@@ -10,6 +10,31 @@ export default function OverlayUI() {
   const container = useRef<HTMLDivElement>(null);
   const [selectedColor, setSelectedColor] = useState('#E31B23');
   
+  // Pause videos when they are not in the viewport to save CPU/GPU resources
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => observer.observe(video));
+
+    return () => {
+      videos.forEach((video) => observer.unobserve(video));
+      observer.disconnect();
+    };
+  }, []);
+
   useLayoutEffect(() => {
     if (!container.current) return;
     
