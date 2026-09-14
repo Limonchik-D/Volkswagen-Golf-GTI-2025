@@ -94,7 +94,7 @@ export default function OverlayUI() {
       {/* 1. Hero Section */}
       <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-[-1] bg-black">
-          <video src="/assets/Основное интро.mp4" autoPlay muted loop playsInline className="object-cover w-full h-full opacity-50" />
+          <video src="/assets/intro_optimized.mp4" autoPlay muted loop playsInline className="object-cover w-full h-full opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#111]"></div>
         </div>
         
@@ -200,7 +200,7 @@ export default function OverlayUI() {
       {/* 3. Interior Video & Photo Gallery */}
       <section id="section-3" className="w-full bg-[#0a0a0a] relative pointer-events-auto mt-[40vh]">
         <div className="relative w-full h-[70vh] overflow-hidden">
-          <video src="/assets/эстетика.mp4" autoPlay muted loop playsInline className="object-cover w-full h-full opacity-70" />
+          <video src="/assets/interior_optimized.mp4" autoPlay muted loop playsInline className="object-cover w-full h-full opacity-70" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
           <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full container mx-auto px-6">
