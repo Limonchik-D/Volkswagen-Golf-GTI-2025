@@ -29,3 +29,34 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* GPU-accelerated entrance animations (Immune to React Three Fiber WebGL parsing stutter) */
+@keyframes heroGtiEntrance {
+  0% { 
+    transform: scale(1.5); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes heroSubtitleEntrance {
+  0% { 
+    transform: translateY(50px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.hero-title-gti {
+  animation: heroGtiEntrance 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero-subtitle {
+  animation: heroSubtitleEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}

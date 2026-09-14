@@ -14,26 +14,13 @@ export default function OverlayUI() {
     if (!container.current) return;
     
     const ctx = gsap.context(() => {
-      // Hero entrance animation
-      gsap.from('.hero-title-gti', {
-        scale: 1.5,
-        opacity: 0,
-        duration: 1.5,
-        ease: 'power4.out',
-        delay: 0.2
-      });
-      gsap.from('.hero-subtitle', {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.8
-      });
+      // NOTE: Hero text (GTI / Legend Returns) animation was moved to index.css 
+      // (pure CSS keyframes) because GSAP JS animations on page load often stutter
+      // due to main-thread blocking when Three.js compiles WebGL shaders for the 3D car model.
 
-      // Scroll fade-ups
-      const texts = gsap.utils.toArray('.fade-up');
-      texts.forEach((text: any) => {
-        gsap.from(text, {
+      // Section 2 Parallax effect for fade-up elements
+      gsap.utils.toArray('.fade-up').forEach((el: any) => {
+        gsap.from(el, {
           y: 30,
           opacity: 0,
           duration: 0.8,
