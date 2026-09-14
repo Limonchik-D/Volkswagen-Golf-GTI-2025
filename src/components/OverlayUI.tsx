@@ -26,7 +26,7 @@ export default function OverlayUI() {
           duration: 0.8,
           ease: 'power3.out',
           scrollTrigger: {
-            trigger: text,
+            trigger: el,
             start: 'top bottom', // Triggers exactly when the element enters the bottom of the screen
             toggleActions: 'play none none none'
           }
