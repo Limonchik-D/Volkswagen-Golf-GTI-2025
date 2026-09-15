@@ -167,9 +167,9 @@ export default function OverlayUI() {
           </div>
           
           {/* Right Column for 3D model */}
-          <div className="w-full md:w-1/2 h-[500px] md:h-auto md:absolute md:right-0 md:top-0 md:bottom-0 flex flex-col items-center justify-center pointer-events-auto z-20">
+          <div className="relative w-full md:w-1/2 h-[500px] md:h-auto md:absolute md:right-0 md:top-0 md:bottom-0 flex flex-col items-center justify-center pointer-events-auto z-20 mt-8 md:mt-0">
             <div 
-              className="w-full h-[600px] md:h-[800px] cursor-grab active:cursor-grabbing md:-ml-32 mt-10 md:mt-0 relative"
+              className="w-full h-full md:h-[800px] cursor-grab active:cursor-grabbing md:-ml-32 relative"
               data-lenis-prevent="true"
               style={{ touchAction: 'none' }}
               onWheel={(e) => e.stopPropagation()}
@@ -210,7 +210,7 @@ export default function OverlayUI() {
       </section>
 
       {/* 3. Interior Video & Photo Gallery */}
-      <section id="section-3" className="w-full bg-[#0a0a0a] relative pointer-events-auto mt-[40vh]">
+      <section id="section-3" className="w-full bg-[#0a0a0a] relative pointer-events-auto mt-20 md:mt-[40vh]">
         <div className="relative w-full h-[70vh] overflow-hidden">
           <video src="/assets/interior_optimized.mp4" autoPlay muted loop playsInline className="object-cover w-full h-full opacity-70" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
