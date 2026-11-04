@@ -2,7 +2,7 @@
 
 ## Asset Setup Instructions
 
-To complete the setup, you need to copy the assets from your Downloads folder (`C:\Users\Limon\Downloads\Volkswagen Golf GTI 2025_ фото, характеристики - Auto24_files`) into the `public/assets/` directory of this project.
+To complete the setup, you need to copy the assets from your Downloads folder (`C:\Users\Volkswagen Golf GTI 2025_ фото, характеристики - Auto24_files`) into the `public/assets/` directory of this project.
 
 1. **Create the directory**: 
    Inside this project's `public` folder, create a new folder named `assets`.
